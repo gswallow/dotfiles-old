@@ -4,3 +4,6 @@ fi
 
 alias dme="eval $(docker-machine env)"
 alias vi="/usr/local/bin/vim"
+
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
+export PATH=${PATH}:${HOME}/bin
