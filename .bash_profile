@@ -1,5 +1,6 @@
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+brew_prefix=$(brew --prefix)
+if [ -f $brew_prefix/etc/bash_completion ]; then
+  . $brew_prefix/etc/bash_completion
 fi
 
 # Aliases
@@ -17,4 +18,4 @@ export PATH=${PATH}:${HOME}/bin
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
-source $(brew --prefix autoenv)/activate.sh
+source $brew_prefix/opt/autoenv/activate.sh
