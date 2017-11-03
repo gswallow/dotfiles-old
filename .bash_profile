@@ -14,5 +14,7 @@ pbc() {
 # Variables
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 export PATH=${PATH}:${HOME}/bin
+export CLICOLOR=1
+export LSCOLORS=gxfxcxdxbxegedabagacad
 
 source $(brew --prefix autoenv)/activate.sh
