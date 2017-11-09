@@ -4,8 +4,12 @@ if [ -f $brew_prefix/etc/bash_completion ]; then
 fi
 
 # Aliases
-alias dme="eval $(docker-machine env)"
 alias vi="/usr/local/bin/vim"
+alias la="ls -larth"
+
+dme() {
+  eval $(docker-machine env)
+  }
 
 # Functions
 pbc() {
