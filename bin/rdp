@@ -1,0 +1,27 @@
+#!/bin/bash -e
+
+host=$1; shift
+
+uri="rdp://full%20address=s:$host"
+
+# Redirect
+uri="${uri}&redirectdrives=i:1"
+uri="${uri}&redirectclipboard=i:1"
+
+# Set resolution the way I want it
+uri="${uri}&session%20bpp=i:24"
+uri="${uri}&desktopwidth=i:1600"
+uri="${uri}&desktopheight=i:900"
+uri="${uri}&screen%20mode%20id=i:0"
+
+# Prompt for credentials on client
+uri="${uri}&prompt%20for%20credentials%20on%20client=i:1"
+
+# Set username
+if [ $# -ge 1 ]; then
+  uri="${uri}&username=s:$1"
+  shift
+fi
+
+# Go
+open -Fj "$uri"
