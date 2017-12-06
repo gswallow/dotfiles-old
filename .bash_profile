@@ -6,6 +6,7 @@ fi
 # Aliases
 alias vi="/usr/local/bin/vim"
 alias la="ls -larth"
+alias tf="terraform"
 
 dme() {
   eval $(docker-machine env)
