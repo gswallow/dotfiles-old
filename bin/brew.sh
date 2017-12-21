@@ -5,17 +5,7 @@ sudo xcode-select --install
 
 brew cask
 
-for i in google-chrome \
-         firefox packer \
-         vagrant \
-         skitch \
-         spotify \
-         slack ; do
-  brew cask install $i
-done
-
 for i in autoenv \
-         autoenv \
          awscli \
          bash-completion \
          curl \
@@ -28,6 +18,7 @@ for i in autoenv \
          gd \
          gdbm \
          gist \
+         git \
          graphviz \
          jpeg \
          kops \
@@ -59,6 +50,17 @@ for i in autoenv \
   brew install $i 
 done
 
-for c in google-chrome firefox packer vagrant skitch spotify slack ; do
+for c in google-chrome \
+        firefox \
+        minikube \
+        packer \
+        vagrant \
+        skitch \
+        spotify \
+        slack \
+        wireshark \
+        microsoft-remote-desktop-beta \
+        virtualbox \
+        virtualbox-extension-pack; do
   brew cask install $c
 done
