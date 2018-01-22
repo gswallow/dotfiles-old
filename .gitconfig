@@ -1,2 +1,4 @@
 [user]
-	email = gswallow@ivytech.edu
+    email = gswallow@ivytech.edu
+[merge]
+    tool = meld

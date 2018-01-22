@@ -52,6 +52,7 @@ done
 
 for c in google-chrome \
         firefox \
+        meld \
         minikube \
         packer \
         vagrant \
