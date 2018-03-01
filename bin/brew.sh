@@ -7,6 +7,7 @@ brew cask
 
 for i in autoenv \
          awscli \
+         azure-cli \
          bash-completion \
          curl \
          direnv \
