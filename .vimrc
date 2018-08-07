@@ -18,9 +18,10 @@ set background=dark
 
 set tabstop=2                 " Display tabs as two spaces
 set softtabstop=2             " Use two spaces for tabs when editing
+set shiftwidth=2              " two space indent
 set expandtab                 " Convert tabs into spaces
 
-" set cursorline                " Highlight the line where the cursor is
+"set cursorline                " Highlight the line where the cursor is
 set showmatch                 " Match opening and closing parantheses, braces, etc.
 
 filetype plugin indent on     " load filetype-specific indent files
