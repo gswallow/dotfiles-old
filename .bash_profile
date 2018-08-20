@@ -7,6 +7,7 @@ fi
 alias vi="/usr/local/bin/vim"
 alias la="ls -larth"
 alias tf="terraform"
+alias azlogin='az login --username $AZURE_USERNAME --password $AZURE_PASSWORD --tenant $AZURE_TENANT > /dev/null'
 
 dme() {
   eval $(docker-machine env)
@@ -21,6 +22,7 @@ pbc() {
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 export PATH=${PATH}:${HOME}/bin
 export CLICOLOR=1
+export GOPATH=${HOME}/go
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
 # Colors for the less pager
@@ -31,6 +33,21 @@ export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
 export LESS_TERMCAP_so=$(printf '\e[01;32m') # enter standout mode – green
 export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan
+
+#AWSume alias to source the AWSume script
+alias awsume=". awsume"
+
+#Auto-Complete function for AWSume
+_awsume() {
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    opts=$(awsumepy --rolesusers)
+    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+    return 0
+}
+complete -F _awsume awsume
 
 source $brew_prefix/opt/autoenv/activate.sh
 
