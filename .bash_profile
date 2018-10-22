@@ -1,6 +1,15 @@
+# Homebrew
 brew_prefix=$(brew --prefix)
 if [ -f $brew_prefix/etc/bash_completion ]; then
   . $brew_prefix/etc/bash_completion
+fi
+
+export PATH="${brew_prefix}/opt/python/libexec/bin:/usr/local/sbin:${PATH}"
+
+source $brew_prefix/opt/autoenv/activate.sh
+
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
 fi
 
 # Aliases
@@ -9,9 +18,9 @@ alias la="ls -larth"
 alias tf="terraform"
 alias azlogin='az login --username $AZURE_USERNAME --password $AZURE_PASSWORD --tenant $AZURE_TENANT > /dev/null'
 
-dme() {
-  eval $(docker-machine env)
-  }
+mse() { 
+  eval $(minishift docker-env)
+}
 
 # Functions
 pbc() {
@@ -49,5 +58,5 @@ _awsume() {
 }
 complete -F _awsume awsume
 
-source $brew_prefix/opt/autoenv/activate.sh
-
+# Molecule autocomplete
+eval "$(_MOLECULE_COMPLETE=source molecule)"
