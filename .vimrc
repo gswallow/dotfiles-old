@@ -9,6 +9,7 @@ Plug 'hdima/python-syntax'
 Plug 'fatih/vim-go'
 Plug 'pearofducks/ansible-vim'
 Plug 'saltstack/salt-vim'
+Plug 'elzr/vim-json"
 call plug#end()
 
 let g:rehash256 = 1           " find out what this does
